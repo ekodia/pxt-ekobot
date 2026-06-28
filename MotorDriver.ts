@@ -5,7 +5,7 @@ enum Motor {
   B = 0x2,
 }
 
-//% weight=20 color=#3333FF icon="\uf1b9" block="Ekodia"
+//% weight=20 color=#3333FF icon="\uf2db" block="Ekodia"
 namespace Ekodia {
   const PWMA1 = AnalogPin.P13;
   const PWMA2 = AnalogPin.P12;

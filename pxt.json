@@ -8,6 +8,7 @@
     "core": "*"
   },
   "files": ["README.md", "MotorDriver.ts"],
-  "testFiles": ["test.ts"],
+  "testFiles": ["main.ts"],
+  "supportedTargets": ["microbit"],
   "public": true
 }

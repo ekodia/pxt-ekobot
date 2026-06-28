@@ -1,0 +1,13 @@
+{
+  "name": "Ekobot",
+  "version": "0.1.0",
+  "description": "Ekobot est un robot fait par Ekodia",
+  "icon": "images/ekodia.png",
+  "license": "MIT",
+  "dependencies": {
+    "core": "*"
+  },
+  "files": ["README.md", "MotorDriver.ts"],
+  "testFiles": ["test.ts"],
+  "public": true
+}

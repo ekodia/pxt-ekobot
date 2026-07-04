@@ -21,7 +21,7 @@ namespace Ekodia {
   /**
    * Démarrer le moteur avec la vitesse enregistrée.
    */
-  //% blockId=Ekodia_Start block="démarrer Moteur %m|à %speed"
+  //% blockId=Ekodia_Start block="régler Moteur %m|à %speed"
   //% weight=90
   //% speed.min=-1023 speed.max=1023
   export function demarrer(m: Motor, speed: number): void {

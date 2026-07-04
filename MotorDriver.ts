@@ -18,32 +18,13 @@ namespace Ekodia {
 
   const PWMPeriod = 10000;
 
-  // Vitesse mémorisée pour chaque moteur (-1023 à 1023)
-  let vitesseA = 0;
-  let vitesseB = 0;
-
-  /**
-   * Régler la vitesse d'un moteur (sans le démarrer).
-   * @param speed vitesse [-1023..1023], négatif = marche arrière
-   */
-  //% blockId=Ekodia_SetSpeed block="régler vitesse Moteur %m|à %speed"
-  //% weight=100
-  //% speed.min=-1023 speed.max=1023
-  export function reglerVitesse(m: Motor, speed: number): void {
-    if (m == Motor.A) {
-      vitesseA = speed;
-    } else {
-      vitesseB = speed;
-    }
-  }
-
   /**
    * Démarrer le moteur avec la vitesse enregistrée.
    */
-  //% blockId=Ekodia_Start block="démarrer Moteur %m"
+  //% blockId=Ekodia_Start block="démarrer Moteur %m|à %speed"
   //% weight=90
-  export function demarrer(m: Motor): void {
-    const speed = m == Motor.A ? vitesseA : vitesseB;
+  //% speed.min=-1023 speed.max=1023
+  export function demarrer(m: Motor, speed: number): void {
     appliquer(m, speed);
   }
 

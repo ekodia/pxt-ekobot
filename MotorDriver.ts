@@ -18,6 +18,9 @@ namespace Ekodia {
 
   const PWMPeriod = 10000;
 
+  let vitesseA = 0;
+  let vitesseB = 0;
+
   /**
    * Démarrer le moteur avec la vitesse enregistrée.
    */
@@ -39,9 +42,17 @@ namespace Ekodia {
 
   // Fonction interne : applique une vitesse aux broches (décroissance rapide)
   function appliquer(m: Motor, speed: number): void {
+    if (m === Motor.A) {
+      if (speed === vitesseA) return;
+      vitesseA = speed;
+    } else {
+      if (speed === vitesseB) return;
+      vitesseB = speed;
+    }
+
     const amp = Math.abs(speed);
 
-    if (m == Motor.A) {
+    if (m === Motor.A) {
       if (speed > 0) {
         pins.analogWritePin(PWMA1, amp);
         pins.analogSetPeriod(PWMA1, PWMPeriod);
